@@ -28,8 +28,26 @@ export class CauseDetailComponent implements OnInit {
      this.causeId = urlParameters['id'];
      //the above two lines set up route paramaters and generate urls based off of Firebase hash ids
    });
-   this.causeToDisplay = this.causeService.getCauseById(this.causeId);
+   this.causeToDisplay = this.causeService.getCauseById(this.causeId).subscribe(dataLastEmittedFromObserver => {
+     this.causeToDisplay = dataLastEmittedFromObserver;
+   });
    //calls causeToDisplay and getCauseById(this.causeId) to tell causeService to route us to specific causes
+  }
+
+  badgeColor(causeToDisplay) {
+    if (causeToDisplay.category == 'Health') {
+      console.log(causeToDisplay)
+      return "badge badge-warning";
+    } else if( causeToDisplay.category =='Travel'){
+      return "badge badge-success";
+    } else if( causeToDisplay.category =='Humanities'){
+      return "badge badge-info";
+    } else if( causeToDisplay.category =='Arts'){
+      return "badge badge-danger";
+    } else if( causeToDisplay.category =='Other'){
+      return "badge badge-dark";
+    }
+    console.log(causeToDisplay);
   }
 
 }

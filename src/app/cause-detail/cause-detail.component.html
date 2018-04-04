@@ -3,10 +3,12 @@
 
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">{{(causeToDisplay | async)?.name}}</h1>
-      <h3>${{(causeToDisplay | async)?.goal}} FUNDING GOAL</h3>
-    <p class="lead">{{(causeToDisplay | async)?.description }}</p>
-    <p>{{(causeToDisplay | async)?.category}}</p>
+    <h1 class="display-4">{{(causeToDisplay?.name)}}</h1>
+  <span [class]="badgeColor(causeToDisplay)">{{(causeToDisplay?.category)}}</span>
+  <br>
+  <hr>
+      <h3>${{(causeToDisplay?.goal)}} FUNDING GOAL</h3>
+    <p class="lead">{{(causeToDisplay?.description )}}</p>
   </div>
 </div>
 
