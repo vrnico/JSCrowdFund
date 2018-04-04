@@ -1,0 +1,7 @@
+<h2>Causes</h2>
+
+<div *ngFor="let cause of causes | async" (click)="goToDetailPage(cause)" class="panel panel-default">
+  <div class="panel-body">
+    <h3><em>{{cause.name}}</em></h3>
+  </div>
+</div>
