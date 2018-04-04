@@ -1,7 +1,14 @@
 <div>
   <!-- HTML USES BRACKET NOTATION AND PIPES TO CALL causeToDisplay function and async to display styling and other information regardless of data being undefined in Firebase -->
 
-  <h2>{{(causeToDisplay | async)?.name}}</h2>
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{(causeToDisplay | async)?.name}}</h1>
+      <h3>${{(causeToDisplay | async)?.goal}} FUNDING GOAL</h3>
+    <p class="lead">{{(causeToDisplay | async)?.description }}</p>
+    <p>{{(causeToDisplay | async)?.category}}</p>
+  </div>
+</div>
 
-  
+
 </div>

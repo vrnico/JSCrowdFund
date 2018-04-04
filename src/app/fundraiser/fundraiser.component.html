@@ -9,12 +9,27 @@
         <br>
         <input #newName class='form-control'>
         <br>
+        <label>Funding Goal:</label>
+        <br>
+        <input #newGoal class='form-control'>
+        <br>
         <label>Cause Description:</label>
         <br>
         <textarea class='form-control' #newDescription></textarea>
-      </div>
+        <br>
+        <label>Category:</label>
+            <select #newCategory class='dropdown show'>
+          <option value="Travel">Travel</option>
+          <option value="Health">Health</option>
+          <option value="Arts">Arts</option>
+          <option value="Humanities">Humanities</option>
+          <option value="Technology">Technology</option>
+          <option value="Other">Other</option>
+            </select>
       <br>
-       <button (click)="submitForm(newName.value, newDescription.value); newName.value=''; newDescription.value='';" class="form-control btn-success">Add Cause</button>
+      <br>
+      <!--ADD PROPERTIES TO SUBMITFORM-->
+       <button (click)="submitForm(newName.value, newDescription.value, newGoal.value, newCategory.value); newName.value=''; newDescription.value=''; newGoal.value=''; " class="form-control btn-success">Add Cause</button>
     </div>
   </div>
 </div>

@@ -14,8 +14,8 @@ export class FundraiserComponent implements OnInit {
 
   constructor(private causeService: CauseService) { }
 
-  submitForm(name: string, description: string) {
-    var newCause: Cause = new Cause(name, description);
+  submitForm(name: string, description: string, goal: number, category: string) {
+    var newCause: Cause = new Cause(name, description, goal, category);
     this.causeService.addCause(newCause);
   }
   ngOnInit() {
