@@ -1,5 +1,12 @@
 <h2>Causes</h2>
 
+
+<select (change) = "onChange($event.target.value)">
+  <option value='allCategories'>All Categories</option>
+  <option value='Health'> Health</option>
+  <option value='Arts'>Arts</option>
+</select>
+<hr>
 <div *ngFor="let cause of causes | async" (click)="goToDetailPage(cause)" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{cause.name}}</em></h3>

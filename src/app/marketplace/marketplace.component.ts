@@ -14,11 +14,14 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class MarketplaceComponent implements OnInit {
   causes: FirebaseListObservable<any[]>;
 
+
   constructor(private router: Router, private causeService: CauseService){}
+
 
   ngOnInit(){
     this.causes = this.causeService.getCauses();
   }
+
 
   goToDetailPage(clickedCause) {
     this.router.navigate(['causes', clickedCause.$key]);

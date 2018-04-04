@@ -21,6 +21,7 @@ export class CauseDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private location: Location, private causeService: CauseService) { }
 
   //private route: ActivatedRoute allows us to go to specific page based off of data in Firebase
+  filterByCategories: string = "Art";
 
 
   ngOnInit() {
@@ -47,7 +48,12 @@ export class CauseDetailComponent implements OnInit {
     } else if( causeToDisplay.category =='Other'){
       return "badge badge-dark";
     }
-    console.log(causeToDisplay);
+
+    onChange(optionFromMenu){
+      this.filterByCategories = optionFromMenu;
+    }
+
+
   }
 
 }
